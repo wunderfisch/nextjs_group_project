@@ -1,6 +1,16 @@
+import React from 'react';
+import { AppProps } from 'next/app';
+import TextChat from '../components/TextChat'
 import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      <Component {...pageProps} />
+      <TextChat />
+    </>
+  );
+};
+
+export default MyApp;
