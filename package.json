@@ -19,7 +19,7 @@
     "eslint-config-next": "13.4.12",
     "express": "^4.18.2",
     "framer-motion": "^10.15.0",
-    "next": "13.4.12",
+    "next": "^13.4.12",
     "openai": "^3.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
