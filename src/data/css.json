@@ -1,0 +1,7 @@
+{
+  "css": {
+    "id": 1,
+    "question": "What is CSS, and what does it stand for?",
+    "answer": "CSS stands for Cascading Style Sheets. It is a stylesheet language used to control the presentation and layout of HTML documents."
+  }
+}

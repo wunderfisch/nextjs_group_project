@@ -4,7 +4,6 @@
     "vscode-icons-team.vscode-icons",
     "dsznajder.es7-react-js-snippets",
     "xabikos.javascriptsnippets",
-    "bradlc.vscode-tailwindcss",
-    "moalamri.inline-fold"
+    "bradlc.vscode-tailwindcss"
   ]
 }
