@@ -1,7 +1,9 @@
 import React from "react";
 import { AppProps } from "next/app";
 import TextChat from "../components/TextChat";
-import "@/styles/globals.css";
+import Footer from '../components/Footer'
+import '@/styles/globals.css'
+import ProgressBar from '@/components/ProgressBar';
 import Navbar from "@/components/Navbar";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -9,7 +11,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Component {...pageProps} />
 
+      <ProgressBar />
+
       <TextChat />
+      <Footer />
     </>
   );
 };
