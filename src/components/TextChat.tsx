@@ -17,7 +17,7 @@ const TextChat = () => {
   const [buttonColor, setButtonColor] = useState("bg-blue-500");
   const [isFirstRender, setIsFirstRender] = useState(true); //
   const isScrolledRef = useRef(false); // New
-  const [isApiKeyAvailable, setIsApiKeyAvailable] = useState(false); //change the state to false when you dont wanna use openaiapi or to true to switch it on
+  const [isApiKeyAvailable, setIsApiKeyAvailable] = useState(true); //change the state to false when you dont wanna use openaiapi or to true to switch it on
   const [userSentFirstMessage, setUserSentFirstMessage] = useState(false);
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -124,7 +124,7 @@ const TextChat = () => {
     <>
       {!isOpen && (
         <motion.button
-          className={`fixed bottom-10 right-14 text-white rounded-full h-32 w-32  flex items-center justify-center ${buttonColor}`}
+          className={`fixed bottom-20 right-14 text-white rounded-full h-32 w-32  flex items-center justify-center ${buttonColor}`}
           whileHover={{ scale: 1.3 }}
           whileTap={{ scale: 0.7 }}
           onClick={toggleChat}
