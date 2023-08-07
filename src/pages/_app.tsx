@@ -9,8 +9,10 @@ import Navbar from "@/components/Navbar";
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <Component {...pageProps} />
 
+<Navbar />
+      <Component {...pageProps} />
+      
       <ProgressBar />
 
       <TextChat />
