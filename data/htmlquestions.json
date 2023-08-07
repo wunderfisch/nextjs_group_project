@@ -1,0 +1,54 @@
+{
+  "html": [
+    {
+      "id": 1,
+      "question": "What is HTML, and what does it stand for?",
+      "answer": "HTML stands for HyperText Markup Language. It is the standard markup language used to create and design web pages."
+    },
+    {
+      "id": 2,
+      "question": "Explain the difference between HTML elements and tags.",
+      "answer": "HTML elements are the building blocks of an HTML document, while HTML tags are used to define the structure of those elements. An HTML element consists of an opening tag, content, and a closing tag, while an HTML tag is a keyword enclosed in angle brackets (<>)."
+    },
+    {
+      "id": 3,
+      "question": "What is the purpose of the <!DOCTYPE> declaration in an HTML document?",
+      "answer": "The <!DOCTYPE> declaration specifies the type of document (HTML version) being used. It helps the browser interpret the document correctly and avoid compatibility issues."
+    },
+    {
+      "id": 4,
+      "question": "How do you link an external CSS stylesheet to an HTML document?",
+      "answer": "You can link an external CSS stylesheet to an HTML document using the <link> element in the <head> section. The href attribute of the <link> element points to the CSS file."
+    },
+    {
+      "id": 5,
+      "question": "What are semantic elements in HTML, and why are they important?",
+      "answer": "Semantic elements are HTML elements that carry meaning, making it clear to both the browser and developers about the purpose and structure of the content. Examples of semantic elements include <header>, <nav>, <article>, <footer>, etc."
+    },
+    {
+      "id": 6,
+      "question": "What is the use of the alt attribute in an image tag?",
+      "answer": "The alt attribute in an image tag provides alternative text that is displayed if the image cannot be loaded. It is also used by screen readers to describe the image to visually impaired users."
+    },
+    {
+      "id": 7,
+      "question": "How can you create a hyperlink in HTML?",
+      "answer": "You can create a hyperlink in HTML using the <a> (anchor) element. The href attribute of the <a> element specifies the URL of the destination page."
+    },
+    {
+      "id": 8,
+      "question": "Describe the difference between <div> and <span> elements.",
+      "answer": "Both <div> and <span> are container elements, but <div> is a block-level element, while <span> is an inline element. Block-level elements start on a new line and take up the full available width, while inline elements only take up as much width as necessary."
+    },
+    {
+      "id": 9,
+      "question": "How do you create an ordered list (<ol>) and an unordered list (<ul>) in HTML?",
+      "answer": "To create an ordered list, use the <ol> element and enclose each list item with <li> tags. For an unordered list, use the <ul> element instead."
+    },
+    {
+      "id": 10,
+      "question": "Explain the concept of HTML entities and give an example.",
+      "answer": "HTML entities are special codes used to represent characters that have a special meaning in HTML, such as <, >, &, and &quot;. For example, '&lt;' represents the less-than symbol (<), and '&gt;' represents the greater-than symbol (>)."
+    }
+  ]
+}
