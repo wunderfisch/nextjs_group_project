@@ -12,19 +12,6 @@ const config = new Configuration({
 // Initialize an instance of OpenAIApi with the configuration
 const openai = new OpenAIApi(config);
 
-// Async function to generate an image based on the provided message
-const getImage = async (message: string) => {
-  // Send an image request to the OpenAI API
-  const res = await openai.createImage({
-    prompt: message,
-    n: 5,
-    size: '1024x1024',
-  });
-
-  // Return the data received from the API
-  return res.data;
-};
-
 // Async function to generate text based on the provided message
 const getText = async (message: string) => {
   // Send a completion request to the OpenAI API with text-davinci-003 model
@@ -59,19 +46,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.json({ text: data.choices[0].text });
         return;
       }
-    } else {
-      // If 'type' is not 'text', assume it is 'image', and call the getImage function to generate an image
-      const data = await getImage(message);
-
-      // Check if the API response contains image data
-      if (data?.data) {
-        // If image data is available, send the generated images back as a JSON response
-        res.json({ images: data.data.map((obj) => ({ image: obj.url })) });
-        return;
-      }
     }
 
-    // If the response data is not available, return an error response
+    // If the response data is not available or the type is not 'text', return an error response
     res.status(404).json({ error: 'Data not found' });
   } catch (e) {
     // Catch any errors that occur during API call or processing
