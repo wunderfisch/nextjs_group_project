@@ -1,14 +1,12 @@
 import React from "react";
 
 type Props = {
-  id: number;
-  question: string;
-  answer: string;
+  questionx: { id: number; question: string; answer: string };
 };
 
-export default function Questionblock({ cssquestion }: Props) {
-  console.log("id :>> ", cssquestion);
-  const { id, question, answer } = cssquestion;
+export default function Questionblock({ questionx }: Props) {
+  // console.log("id :>> ", question);
+  const { id, question, answer } = questionx;
   return (
     <div className="border px-3 py-4 ">
       <div>
