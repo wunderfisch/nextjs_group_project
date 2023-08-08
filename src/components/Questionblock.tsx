@@ -5,11 +5,13 @@ type Props = {
 };
 
 export default function Questionblock({ questionx }: Props) {
+
   const [answerVisible, setAnswerVisible] = useState<boolean>(false);
 
   const revealAnswer = () => {
     setAnswerVisible(true);
   };
+
   // console.log("id :>> ", question);
   const { id, question, answer } = questionx;
   return (
