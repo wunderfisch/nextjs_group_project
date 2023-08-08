@@ -24,16 +24,17 @@ export default function Home() {
           />
           <div className="mt-4 md:mt-0">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Information General maybe Chatbot?
+              Information General 
             </h2>
             <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-             This website will get you ready for your next tech interview. 
+             This website will get you ready 
+             <p>for your next tech interview. </p>
             </p>
             <a
               href="#"
               className="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
             >
-             maybe here we can add a lin to the random question generator
+             link to the random question generator?
               <svg
                 className="ml-2 -mr-1 w-5 h-5"
                 fill="currentColor"
