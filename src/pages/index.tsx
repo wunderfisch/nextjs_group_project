@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import NavBar from "@/components/Navbar";
+import softskills from "../../public/softskills.jpg";
+import techskills from "../../public/techskills.jpg";
 
 
 export default function Home() {
@@ -17,7 +19,7 @@ export default function Home() {
           />
           <Image
             className="w-full hidden dark:block"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
+            src="https://flowbite.s3.amazonaws.cm/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
             alt="dashboard image"
             width={600}
             height={400}
@@ -81,14 +83,14 @@ export default function Home() {
           </div>
           <Image
             className="w-full dark:hidden"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
+            src={softskills}
             alt="dashboard image"
             width={600}
             height={400}
           />
           <Image
             className="w-full hidden dark:block"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
+            src={softskills}
             alt="dashboard image"
             width={600}
             height={400}
@@ -99,14 +101,14 @@ export default function Home() {
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <Image
             className="w-full dark:hidden"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
+            src={techskills}
             alt="dashboard image"
             width={600}
             height={400}
           />
           <Image
             className="w-full hidden dark:block"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
+            src={techskills}
             alt="dashboard image"
             width={600}
             height={400}
