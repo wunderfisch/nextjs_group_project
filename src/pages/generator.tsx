@@ -1,11 +1,13 @@
 import React from "react";
+
 import CoverLetterGenerator from "../components/CoverLetterGenerator";
 // import coverLetterImage from "../images/cover-letter-image.jpg"; // Replace with your actual image path
+
 
 const Generator = () => {
   return (
     <div className="container mx-auto p-4">
-      {/* Description */}
+
       <div className="bg-gray-200 rounded-lg shadow-lg p-8 mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">What You Can Do</h2>
         <p className="text-gray-900 mb-4">
@@ -30,12 +32,11 @@ const Generator = () => {
         </div>
       </div>
 
-      {/* Cover Letter Generator */}
       <div className="bg-gray-200 rounded-lg shadow-lg p-8">
 
         <CoverLetterGenerator />
       </div>
-    </div>
+ </div>
   );
 };
 
