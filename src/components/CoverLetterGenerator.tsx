@@ -7,9 +7,9 @@ const CoverLetterGenerator = () => {
   const generateCoverLetter = async () => {
     const data = {
       type: "text",
-      message: input, 
+      message: input,
     };
-    
+
     try {
       const res = await fetch("/api/openai", {
         method: "POST",
@@ -21,7 +21,7 @@ const CoverLetterGenerator = () => {
       });
 
       const responseData = await res.json();
-      
+
       if (responseData?.text) {
         setGeneratedLetter(responseData.text); // Set the generated cover letter
       }
@@ -42,7 +42,9 @@ const CoverLetterGenerator = () => {
   return (
     <div className="flex flex-col items-center min-h-screen bg-white-100 py-8">
       <div className="w-full max-w-md bg-black p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-4">Generate Your Cover Letter</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          Generate Your Cover Letter
+        </h2>
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -58,7 +60,9 @@ const CoverLetterGenerator = () => {
         </button>
         {generatedLetter && (
           <div className="mt-6 p-4 bg-gray-200 rounded-md">
-            <h3 className="text-lg font-semibold mb-2">Generated Cover Letter:</h3>
+            <h3 className="text-lg font-semibold mb-2">
+              Generated Cover Letter:
+            </h3>
             <pre className="overflow-auto max-h-40">{generatedLetter}</pre>
             <button
               onClick={downloadCoverLetter}
@@ -74,5 +78,3 @@ const CoverLetterGenerator = () => {
 };
 
 export default CoverLetterGenerator;
-
-
