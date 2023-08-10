@@ -5,6 +5,8 @@ export default async function handler(req, res) {
   try {
     const jsonDirectory = path.join(process.cwd(), "data");
     const fileContents = await fs.readFile(
+      // instead of hardcoded path to json file, url parameter decides the path
+      //  jsonDirectory +  `${section}questions.json`,
       jsonDirectory + "/cssquestions.json",
       "utf8"
     );
