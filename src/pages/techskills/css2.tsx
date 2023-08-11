@@ -10,7 +10,20 @@ interface cssquestion {
   answer: string;
 }
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+const urlencoded = new URLSearchParams();
+urlencoded.append("language", "css");
+
+const requestOptions: RequestInit = {
+  method: "POST",
+  headers: myHeaders,
+  body: urlencoded,
+  redirect: "follow",
+};
+const fetcher = (url: string) =>
+  fetch(url, requestOptions).then((res) => res.json());
 
 export default function Index() {
   const { data, error } = useSWR("/api/staticdata", fetcher);
