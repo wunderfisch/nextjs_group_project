@@ -2,7 +2,7 @@ import Questionblock from "@/components/Questionblock";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import Head from "../../../node_modules/next/head";
+import Head from "next/head";
 
 interface Htmlquestion {
   id: number;
