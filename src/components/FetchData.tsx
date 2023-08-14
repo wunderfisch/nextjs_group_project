@@ -13,7 +13,6 @@ interface PathNameProps {
 }
 
 export default function Index({ pathname }: PathNameProps) {
-  console.log("pathname in FetchData:>> ", pathname);
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
@@ -28,12 +27,11 @@ export default function Index({ pathname }: PathNameProps) {
   };
   const fetcher = (url: string) =>
     fetch(url, requestOptions).then((res) => {
-      // console.log("res :>> ", res.json());
       return res.json();
     });
 
   const { data, error } = useSWR("/api/staticdata", fetcher);
-  console.log("data :>> ", data);
+  // console.log("data :>> ", data);
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
