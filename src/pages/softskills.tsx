@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import FetchData from "@/components/FetchData";
 
-const softskills = () => {
+export default function Section() {
+  const language: string = "softskills";
+  console.log("language :>> ", language);
+
   return (
-    <div>softskills</div>
-  )
+    <div>
+      {language && (
+        <div key={language}>
+          <FetchData pathname={language} />
+        </div>
+      )}
+    </div>
+  );
 }
-
-export default softskills

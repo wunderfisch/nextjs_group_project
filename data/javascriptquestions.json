@@ -1,54 +1,52 @@
-{
-  "javascript": [
-    {
-      "id": 1,
-      "question": "What is JavaScript, and what can you use it for?",
-      "answer": "JavaScript is a high-level, interpreted programming language that runs in web browsers. It is used for creating dynamic and interactive web pages, as well as server-side development using frameworks like Node.js."
-    },
-    {
-      "id": 2,
-      "question": "Explain the difference between let, const, and var in JavaScript.",
-      "answer": "`let` and `const` are block-scoped declarations introduced in ES6, while `var` is function-scoped and the old way of declaring variables. `let` allows reassignment, while `const` is used for constants whose value cannot be changed after assignment."
-    },
-    {
-      "id": 3,
-      "question": "How do you create an array in JavaScript?",
-      "answer": "Arrays can be created using square brackets `[]`. For example, `let myArray = [1, 2, 3];`."
-    },
-    {
-      "id": 4,
-      "question": "What is the purpose of the 'use strict' directive in JavaScript?",
-      "answer": "'use strict' is a string literal used to enable strict mode in JavaScript, which enforces a stricter set of rules and prevents certain errors. It helps to write cleaner and more secure code."
-    },
-    {
-      "id": 5,
-      "question": "How do you loop through elements in an array in JavaScript?",
-      "answer": "You can use loops like `for`, `for...of`, `forEach`, or array methods like `map`, `filter`, and `reduce` to iterate through elements in an array."
-    },
-    {
-      "id": 6,
-      "question": "Explain the difference between == and === in JavaScript.",
-      "answer": "`==` is the equality operator that checks for equality after type coercion, while `===` is the strict equality operator that checks for equality without type coercion (strictly equal)."
-    },
-    {
-      "id": 7,
-      "question": "What are arrow functions, and how do you use them?",
-      "answer": "Arrow functions are a shorter syntax for writing function expressions. They have a more concise syntax and automatically bind the `this` value to the surrounding context."
-    },
-    {
-      "id": 8,
-      "question": "How do you handle asynchronous operations in JavaScript?",
-      "answer": "Asynchronous operations are typically handled using callbacks, promises, or async/await syntax. Promises and async/await are more modern and easier-to-read approaches."
-    },
-    {
-      "id": 9,
-      "question": "What is the DOM in JavaScript?",
-      "answer": "The DOM (Document Object Model) is a programming interface for web documents. It represents the structure of HTML and XML documents and provides a way to interact with and manipulate the content and styles of web pages dynamically using JavaScript."
-    },
-    {
-      "id": 10,
-      "question": "How can you handle errors in JavaScript using try...catch?",
-      "answer": "`try...catch` is used to handle exceptions (runtime errors) in JavaScript. Code inside the `try` block is executed, and if an error occurs, it jumps to the corresponding `catch` block to handle the error."
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "question": "What is JavaScript, and what can you use it for?",
+    "answer": "JavaScript is a high-level, interpreted programming language that runs in web browsers. It is used for creating dynamic and interactive web pages, as well as server-side development using frameworks like Node.js."
+  },
+  {
+    "id": 2,
+    "question": "Explain the difference between let, const, and var in JavaScript.",
+    "answer": "`let` and `const` are block-scoped declarations introduced in ES6, while `var` is function-scoped and the old way of declaring variables. `let` allows reassignment, while `const` is used for constants whose value cannot be changed after assignment."
+  },
+  {
+    "id": 3,
+    "question": "How do you create an array in JavaScript?",
+    "answer": "Arrays can be created using square brackets `[]`. For example, `let myArray = [1, 2, 3];`."
+  },
+  {
+    "id": 4,
+    "question": "What is the purpose of the 'use strict' directive in JavaScript?",
+    "answer": "'use strict' is a string literal used to enable strict mode in JavaScript, which enforces a stricter set of rules and prevents certain errors. It helps to write cleaner and more secure code."
+  },
+  {
+    "id": 5,
+    "question": "How do you loop through elements in an array in JavaScript?",
+    "answer": "You can use loops like `for`, `for...of`, `forEach`, or array methods like `map`, `filter`, and `reduce` to iterate through elements in an array."
+  },
+  {
+    "id": 6,
+    "question": "Explain the difference between == and === in JavaScript.",
+    "answer": "`==` is the equality operator that checks for equality after type coercion, while `===` is the strict equality operator that checks for equality without type coercion (strictly equal)."
+  },
+  {
+    "id": 7,
+    "question": "What are arrow functions, and how do you use them?",
+    "answer": "Arrow functions are a shorter syntax for writing function expressions. They have a more concise syntax and automatically bind the `this` value to the surrounding context."
+  },
+  {
+    "id": 8,
+    "question": "How do you handle asynchronous operations in JavaScript?",
+    "answer": "Asynchronous operations are typically handled using callbacks, promises, or async/await syntax. Promises and async/await are more modern and easier-to-read approaches."
+  },
+  {
+    "id": 9,
+    "question": "What is the DOM in JavaScript?",
+    "answer": "The DOM (Document Object Model) is a programming interface for web documents. It represents the structure of HTML and XML documents and provides a way to interact with and manipulate the content and styles of web pages dynamically using JavaScript."
+  },
+  {
+    "id": 10,
+    "question": "How can you handle errors in JavaScript using try...catch?",
+    "answer": "`try...catch` is used to handle exceptions (runtime errors) in JavaScript. Code inside the `try` block is executed, and if an error occurs, it jumps to the corresponding `catch` block to handle the error."
+  }
+]

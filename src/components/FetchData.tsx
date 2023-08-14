@@ -13,7 +13,7 @@ interface PathNameProps {
 }
 
 export default function Index({ pathname }: PathNameProps) {
-  console.log("pathname :>> ", pathname);
+  console.log("pathname in FetchData:>> ", pathname);
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
@@ -43,7 +43,7 @@ export default function Index({ pathname }: PathNameProps) {
       <Head>
         <title key="title">`Questions on ${pathname}`</title>
       </Head>
-      <h1>{`${pathname} questions`}</h1>
+      <h1>{`Questions on ${pathname}`}</h1>
       <div>
         {data &&
           data.map((question: questioninterface) => {
