@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "What is CSS, and what does it stand for?What is React, and what are its key features?",
+    "answer": "React is a JavaScript library for building user interfaces. Its key features include a virtual DOM for efficient rendering, component-based architecture, and one-way data flow."
+  },
+  {
+    "id": 2,
+    "question": "How do you create a functional component in React?",
+    "answer": "Functional components are created using JavaScript functions. They return JSX (JavaScript XML) to define the component's UI."
+  },
+  {
+    "id": 3,
+    "question": "Explain the concept of state and props in React.",
+    "answer": "State and props are both used to manage data in React components. State is managed within the component and can change, while props are passed to the component from its parent and are immutable."
+  },
+  {
+    "id": 4,
+    "question": "What is JSX, and how does it differ from regular JavaScript?",
+    "answer": "JSX is a syntax extension for JavaScript used in React to define the component's UI. It looks similar to HTML but gets transformed into JavaScript objects during compilation."
+  },
+  {
+    "id": 5,
+    "question": "How can you pass data from a parent component to a child component in React?",
+    "answer": "Data can be passed from a parent component to a child component using props. The parent component passes the data as attributes when rendering the child component."
+  },
+  {
+    "id": 6,
+    "question": "How do you handle user events in React?",
+    "answer": "React provides event handlers (e.g., `onClick`, `onChange`) that you can attach to elements in JSX to handle user events."
+  },
+  {
+    "id": 7,
+    "question": "What is the purpose of the useEffect hook in React?",
+    "answer": "The `useEffect` hook in React is used to perform side effects (e.g., data fetching, subscriptions) in functional components. It runs after the component renders and can handle cleanup on unmount."
+  },
+  {
+    "id": 8,
+    "question": "How can you manage form input using React state?",
+    "answer": "You can use React state to store and manage the value of form inputs and update the state using event handlers like `onChange`."
+  },
+  {
+    "id": 9,
+    "question": "Explain the concept of conditional rendering in React.",
+    "answer": "Conditional rendering is used to show different components or content based on certain conditions. It can be achieved using `if` statements, ternary operators, or logical `&&` operators in JSX."
+  },
+  {
+    "id": 10,
+    "question": "How do you perform routing in a React application?",
+    "answer": "React Router is a popular library used for routing in React applications. It allows you to define routes and their corresponding components to display different content based on the URL."
+  }
+]

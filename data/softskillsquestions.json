@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "question": "Tell me about a situation where you effectively communicated a complex technical concept to non-technical team members. How did you do it?",
+    "answer": "Use simple language, analogies, and visual aids to explain the concept clearly. Emphasize the importance of clear and accessible communication in development."
+  },
+  {
+    "id": 2,
+    "question": "How do you react to criticism of your work? Provide an example of how you used feedback to improve.",
+    "answer": "Show openness to feedback and share how you incorporated constructive suggestions to enhance your work."
+  },
+  {
+    "id": 3,
+    "question": "Give an example of a time when you adapted your communication style to be understood by someone with limited technical knowledge.",
+    "answer": "Describe how you simplified technical terms, used relatable examples, and ensured the person understood the message."
+  }
+]
