@@ -4,9 +4,8 @@ import { useRouter } from "next/router";
 
 export default function Section() {
   const params = useRouter();
-  console.log("params :>> ", params);
+
   const language: any = params.query.section;
-  console.log("language :>> ", language);
 
   return (
     <div>
