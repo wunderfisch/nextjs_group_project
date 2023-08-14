@@ -3,12 +3,13 @@ import { Inter } from "next/font/google";
 import NavBar from "@/components/Navbar";
 import softskills from "../../public/softskills.jpg";
 import techskills from "../../public/techskills.jpg";
-import generalinfor from "../../public/generalinfor.jpg"
-
+import generalinfor from "../../public/generalinfor.jpg";
 
 export default function Home() {
   return (
-    <main className={`flex min-h-screen flex-col items-center justify-between p-24`}>
+    <main
+      className={`flex min-h-screen flex-col items-center justify-between p-24`}
+    >
       <section className="bg-white dark:bg-gray-900">
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <Image
@@ -27,13 +28,13 @@ export default function Home() {
           />
           <div className="mt-4 md:mt-0">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Information General 
+              Information General
             </h2>
-            <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-             This website will get you ready 
-             <p>for your next tech interview. </p>
-             <p>Lost? Our AI ChatBot will help you</p>
-            </p>
+            <div className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+              This website will get you ready
+              <p>for your next tech interview. </p>
+              <p>Lost? Our AI ChatBot will help you</p>
+            </div>
             <a
               href="#"
               className="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
@@ -53,7 +54,6 @@ export default function Home() {
               </svg>
             </a>
           </div>
-       
         </div>
       </section>
       <section className="bg-white dark:bg-gray-900">
@@ -63,7 +63,14 @@ export default function Home() {
               Softskills
             </h2>
             <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-            are important to get a job because they demonstrate an individual's ability to communicate effectively, work well with others, and adapt to different situations. Employers often seek candidates with strong soft skills as they contribute to a positive work culture, increased productivity, and better teamwork. Having a combination of technical expertise and well-developed soft skills makes candidates more competitive and desirable in the job market.
+              are important to get a job because they demonstrate an
+              individual's ability to communicate effectively, work well with
+              others, and adapt to different situations. Employers often seek
+              candidates with strong soft skills as they contribute to a
+              positive work culture, increased productivity, and better
+              teamwork. Having a combination of technical expertise and
+              well-developed soft skills makes candidates more competitive and
+              desirable in the job market.
             </p>
             <a
               href="#"
@@ -121,7 +128,7 @@ export default function Home() {
               Techskills
             </h2>
             <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-             This website will get you ready for your next tech interview. 
+              This website will get you ready for your next tech interview.
             </p>
             <ul className="list-disc pl-6">
               <li className="mb-2">HTML</li>
@@ -152,8 +159,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
     </main>
   );
 }
-
