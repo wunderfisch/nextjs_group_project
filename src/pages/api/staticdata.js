@@ -3,6 +3,7 @@ import { promises as fs } from "fs";
 
 export default async function handler(req, res) {
   console.log("req :>> ", req.body.language);
+  console.log("req :>> ", req);
   try {
     const jsonDirectory = path.join(process.cwd(), "data");
     const fileContents = await fs.readFile(

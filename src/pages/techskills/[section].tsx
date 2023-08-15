@@ -18,27 +18,36 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = prefetchedPages.map((prefetchedPage) => {
     return { params: { section: prefetchedPage } };
   });
-  // console.log("paths :>> ", paths);
+  console.log("paths :>> ", paths);
   return {
-    paths: [paths],
+    paths,
     fallback: false,
   };
 };
 
 // this page doesn't receive props, only later they will be fetched
-export const getStaticProps: GetStaticProps<PageType> = async (context) => {
+export const getStaticProps: GetStaticProps<String> = async (context) => {
   // no fetch in this component, only render other component
 
   // // Rauls code:
-  //   // console.log("context :>> ", context);
+  console.log("context :>> ", context);
   //   console.log("getProps");
-  //   const productId = context.params?.productId;
+  // const params = useRouter();
+  const language = context.params?.section;
+  console.log("language :>> ", language);
+  const url = `localhost:3001/api/staticdata?language=${language}questions.json`;
+  try {
+    const response = await fetch(
+      // `http://127.0.0.1:3001/api/staticdata?language=${language}`
+      `http://127.0.0.1:3001/api/staticdata/${language}`
+    );
 
-  //   const response = await fetch(
-  //     `https://fakestoreapi.com/products/${context}`
-  //   );
-  //   const result: ProductType = await response.json();
-  //   //   console.log("result :>> ", result);
+    console.log("response :>> ", response);
+    // const result = await response.json();
+    // console.log("result :>> ", result);
+  } catch (error) {
+    console.log("error :>> ", error);
+  }
 
   return {
     // props: what?
@@ -46,17 +55,19 @@ export const getStaticProps: GetStaticProps<PageType> = async (context) => {
 };
 
 export default function Section() {
-  const params = useRouter();
+  // const params = useRouter();
 
-  const language: any = params.query.section;
+  // const language: any = params.query.section;
 
   return (
     <div>
-      {language && (
+      {" "}
+      something
+      {/* {language && (
         <div key={language}>
           <FetchData pathname={language} />
         </div>
-      )}
+      )} */}
     </div>
   );
 }
