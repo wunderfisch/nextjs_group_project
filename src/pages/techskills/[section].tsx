@@ -2,9 +2,19 @@ import React from "react";
 import FetchData from "@/components/FetchData";
 import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
+import { stringify } from "querystring";
+import Questionblock from "@/components/Questionblock";
+import Head from "../../../node_modules/next/head";
 
-interface PageType {
-  // only sting for urlquery or array from the fetch?
+interface PropsType {
+  result: Array;
+  language: string;
+}
+
+interface questioninterface {
+  id: number;
+  question: string;
+  answer: string;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -18,56 +28,55 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = prefetchedPages.map((prefetchedPage) => {
     return { params: { section: prefetchedPage } };
   });
-  console.log("paths :>> ", paths);
   return {
     paths,
     fallback: false,
   };
 };
 
-// this page doesn't receive props, only later they will be fetched
 export const getStaticProps: GetStaticProps<String> = async (context) => {
-  // no fetch in this component, only render other component
-
-  // // Rauls code:
-  console.log("context :>> ", context);
-  //   console.log("getProps");
-  // const params = useRouter();
   const language = context.params?.section;
-  console.log("language :>> ", language);
-  const url = `localhost:3001/api/staticdata?language=${language}questions.json`;
-  try {
-    const response = await fetch(
-      // `http://127.0.0.1:3001/api/staticdata?language=${language}`
-      `http://127.0.0.1:3001/api/staticdata/${language}`
-    );
 
-    console.log("response :>> ", response);
-    // const result = await response.json();
-    // console.log("result :>> ", result);
-  } catch (error) {
-    console.log("error :>> ", error);
-  }
+  // try {
+  const response = await fetch(
+    `http://127.0.0.1:3000/api/staticdata?language=${language}`
+  );
+
+  // console.log("response :>> ", response);
+  const result = await response.json();
+  // const final = stringify(result);
+  // console.log("result :>> ", result);
+  // console.log("final :>> ", final);
+  // } catch (error) {
+  //   console.log("error :>> ", error);
+  // }
 
   return {
-    // props: what?
+    props: { result, language },
   };
 };
 
-export default function Section() {
-  // const params = useRouter();
-
-  // const language: any = params.query.section;
-
+export default function Section(props: PropsType) {
+  console.log("props :>> ", props);
+  const language = props.language;
+  const result = props.result;
   return (
     <div>
-      {" "}
-      something
-      {/* {language && (
-        <div key={language}>
-          <FetchData pathname={language} />
-        </div>
-      )} */}
+      <Head>
+        <title key="title">`Questions on ${language}`</title>
+      </Head>
+
+      <h1>{`Questions on ${language}`}</h1>
+      <div>
+        {result &&
+          result.map((question: questioninterface) => {
+            return (
+              <div key={question.id}>
+                <Questionblock questionx={question} />
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 }
