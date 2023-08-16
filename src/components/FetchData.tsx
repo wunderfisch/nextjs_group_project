@@ -2,6 +2,7 @@ import Questionblock from "@/components/Questionblock";
 import useSWR from "swr";
 import Head from "../../node_modules/next/head";
 
+
 interface questioninterface {
   id: number;
   question: string;
@@ -42,11 +43,16 @@ export default function Index({ pathname }: PathNameProps) {
         <title key="title">`Questions on ${pathname}`</title>
       </Head>
       <h1>{`Questions on ${pathname}`}</h1>
-      <div>
+      <div 
+      // className="flex flex-wrap justify-center"
+      >
         {data &&
           data.map((question: questioninterface) => {
             return (
-              <div key={question.id}>
+              <div key={question.id}
+
+              //  className="w-1/3 p-2"
+               >
                 <Questionblock questionx={question} />
               </div>
             );
