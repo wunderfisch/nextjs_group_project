@@ -1,13 +1,10 @@
 import React from "react";
-import FetchData from "@/components/FetchData";
-import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { stringify } from "querystring";
 import Questionblock from "@/components/Questionblock";
 import Head from "../../../node_modules/next/head";
 
 interface PropsType {
-  result: Array;
+  result: [questioninterface];
   language: string;
 }
 
@@ -34,30 +31,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<String> = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const language = context.params?.section;
 
-  // try {
   const response = await fetch(
     `http://127.0.0.1:3000/api/staticdata?language=${language}`
   );
-
-  // console.log("response :>> ", response);
   const result = await response.json();
-  // const final = stringify(result);
-  // console.log("result :>> ", result);
-  // console.log("final :>> ", final);
-  // } catch (error) {
-  //   console.log("error :>> ", error);
-  // }
-
   return {
     props: { result, language },
   };
 };
 
 export default function Section(props: PropsType) {
-  console.log("props :>> ", props);
   const language = props.language;
   const result = props.result;
   return (
