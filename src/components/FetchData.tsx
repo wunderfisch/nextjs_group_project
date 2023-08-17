@@ -38,11 +38,11 @@ export default function Index({ pathname }: PathNameProps) {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="text-center mt-8">
       <Head>
         <title key="title">`Questions on ${pathname}`</title>
       </Head>
-      <h1>{`Questions on ${pathname}`}</h1>
+      <h1 className="text-2xl font-semibold mb-4">{`Questions on ${pathname}`}</h1>
       <div 
       // className="flex flex-wrap justify-center"
       >

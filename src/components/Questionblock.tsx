@@ -264,7 +264,7 @@ export default function Questionblock({ questionx }: Props) {
         <div className={styles["phone-notch"]}></div>
         <div className={styles["phone-border"]}>
           <div className={`flex flex-col items-center justify-center p-6`}>
-            <h2 className={`text-lg font-bold mb-2 text-purple-800`}>
+            <h2 className={`text-lg font-bold mb-2 text-black-200`}>
               Question {id}
             </h2>
             {answerVisible ? (

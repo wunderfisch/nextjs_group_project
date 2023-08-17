@@ -1,9 +1,6 @@
-
-
-//!NEW NAVBAR:
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const DropdownMenu = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -11,6 +8,20 @@ const DropdownMenu = () => {
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
+
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      setDropdownOpen(false);
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   return (
     <div className="relative">
@@ -37,7 +48,6 @@ const DropdownMenu = () => {
           />
         </svg>
       </button>
-      {/* Dropdown items */}
       {isDropdownOpen && (
         <div
           className="absolute z-10 right-0 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
@@ -45,14 +55,12 @@ const DropdownMenu = () => {
           aria-orientation="vertical"
           aria-labelledby="dropdownMenuButton"
         >
-          <div
-            className="py-2 text-sm text-gray-700 dark:text-gray-400"
-            role="none"
-          >
+          <div className="py-2 text-sm text-gray-700 dark:text-gray-400" role="none">
             <Link
               href="/techskills/html"
               role="menuitem"
               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              onClick={closeDropdown}
             >
               HTML
             </Link>
@@ -60,6 +68,7 @@ const DropdownMenu = () => {
               href="/techskills/css"
               role="menuitem"
               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              onClick={closeDropdown}
             >
               CSS
             </Link>
@@ -67,6 +76,7 @@ const DropdownMenu = () => {
               href="/techskills/javascript"
               role="menuitem"
               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              onClick={closeDropdown}
             >
               JavaScript
             </Link>
@@ -74,6 +84,7 @@ const DropdownMenu = () => {
               href="/techskills/react"
               role="menuitem"
               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              onClick={closeDropdown}
             >
               React
             </Link>
@@ -81,10 +92,11 @@ const DropdownMenu = () => {
               href="/techskills/advanced-react"
               role="menuitem"
               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              onClick={closeDropdown}
             >
               Advanced React
             </Link>
-            {/* Add other links here */}
+            
           </div>
         </div>
       )}
@@ -94,13 +106,13 @@ const DropdownMenu = () => {
 
 const Navbar = () => (
   <nav className="bg-violet-100  dark:bg-gray-900">
-    <div className="bg-violet-100 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div className="bg-violet-100 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
       <div className="flex items-center">
         {/* Link to the homepage */}
         <Link href="/"></Link>
-        <img src="http://www.w3.org/2000/svg" className="h-8 mr-3" alt="Logo" />
+        <img src="/webhookicon.png" className="h-8 mr-3" alt="Logo" />
         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-          SLAAAAY
+          Prepare4Tech
         </span>
       </div>
       <button
@@ -126,8 +138,9 @@ const Navbar = () => (
           />
         </svg>
       </button>
+      {/* {isDropdownOpen &&( */}
       <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-        <div className=" flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <div className="bg-violet-100 flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-violet-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <Link
               href="/"
               role="menuitem"
@@ -146,6 +159,7 @@ const Navbar = () => (
               href="/softskills"
               role="menuitem"
               className="bg-violet-100 block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              
             >
               Softskills
             </Link>
@@ -156,9 +170,11 @@ const Navbar = () => (
 
           
         </div>
+        
       </div>
     </div>
   </nav>
+  
 );
 
 export default Navbar;
