@@ -12,7 +12,7 @@ export default function Home() {
     <main
       className={`bg-violet-100  flex min-h-screen flex-col items-center justify-between p-24`}
     >
-      <section className="  :bg-gray-900">
+      <section className=" bg-violet-100">
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <Image
             className="w-full dark:hidden"
@@ -40,6 +40,7 @@ export default function Home() {
             <Link
               href="/generator"
               className="inline-flex items-center text-black bg-rose-500 hover:bg-rose-400 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
+              
             >
               Cover Letter Generator
               <svg
@@ -59,7 +60,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-violet-100 dark:bg-gray-900">
-        <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 bg-violet-100">
           <div className="mt-4 md:mt-0">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
               Softskills
@@ -110,7 +111,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-violet-100 dark:bg-gray-900">
-        <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 bg-violet-100">
           <Image
             className="w-full dark:hidden"
             src={techskills}
