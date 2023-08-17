@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "What is CSS, and what does it stand for?What is React, and what are its key features?",
+    "question": "What is React, and what are its key features?",
     "answer": "React is a JavaScript library for building user interfaces. Its key features include a virtual DOM for efficient rendering, component-based architecture, and one-way data flow."
   },
   {
