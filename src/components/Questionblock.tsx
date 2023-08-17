@@ -10,7 +10,7 @@ export default function Questionblock({ questionx }: Props) {
   const revealAnswer = () => {
     setAnswerVisible(true);
   };
-  // console.log("id :>> ", question);
+
   const { id, question, answer } = questionx;
   return (
     <div className="border px-3 py-4 ">

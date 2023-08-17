@@ -1,9 +1,8 @@
 import React from "react";
 import FetchData from "@/components/FetchData";
 
-export default function Section() {
+export default function Softskills() {
   const language: string = "softskills";
-  console.log("language :>> ", language);
 
   return (
     <div>
