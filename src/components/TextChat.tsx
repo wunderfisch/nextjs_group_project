@@ -44,14 +44,17 @@ const TextChat = () => {
 
   const onSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-
+  
     const hasAllowedTopic = allowedTopics.some(topic => message.toLowerCase().includes(topic));
-
+  
     if (!hasAllowedTopic) {
-      setIsMessageRelated(false); // Set the state to indicate the message is not related
+      setIsMessageRelated(false);
       return;
     }
-
+  
+    // Reset the state to indicate that the message is related
+    setIsMessageRelated(true);
+  
     const newMessage: ChatMessage = {
       id: Date.now(),
       text: message,
@@ -59,11 +62,11 @@ const TextChat = () => {
     };
     setChatMessages((prevMessages) => [...prevMessages, newMessage]);
     setMessage("");
-
+  
     if (!userSentFirstMessage) {
       setUserSentFirstMessage(true);
     }
-
+  
     if (isApiKeyAvailable) {
       const data = {
         type: "text",
@@ -96,7 +99,6 @@ const TextChat = () => {
       }
     }
   };
-
   useEffect(() => {
     const interval = setInterval(() => {
       const colors = [
