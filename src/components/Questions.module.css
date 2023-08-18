@@ -1,0 +1,82 @@
+/* Questions.module.css */
+.phone-screen {
+    position: relative;
+    width: 660px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    background-color: #94a3b8; /* Beige or pastel color */
+    border-radius: 20px;
+    border: 1px solid black;
+  
+    margin: 0 10px 20px;
+    overflow: hidden;
+    padding: 10px;
+  }
+  
+  
+  
+  .phone-border {
+    /* border: 6px solid black; */
+    border-radius: 16px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .question-bubble {
+    background-color: #cbd5e1; /* Pastel light purple */
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    max-width: 80%;
+    text-align: center;
+  }
+  
+  .answer-bubble {
+    background-color: #cbd5e1; /* Pastel light green */
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    max-width: 80%;
+    text-align: center;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items:center
+  }
+  
+  .reveal-button {
+    background-color: #fef9c3; /* Pastel light yellow */
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  }
+  
+  .reveal-button:hover {
+    background-color: #ffd31d; /* Slightly brighter shade on hover */
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .close-button {
+    background-color: #fef9c3; /* Pastel light yellow */
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  }
+  
+  .close-button:hover {
+    background-color: #ffd31d; /* Slightly brighter shade on hover */
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
