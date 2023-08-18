@@ -21,7 +21,7 @@ const Generator = () => {
             Click the Generate Cover Letter button to generate a cover letter based on your input.
           </li>
           <li className="mb-2">
-            Review the generated cover letter. Make any necessary edits to personalize it for your application.
+            Review the generated cover letter. 
           </li>
           <li className="mb-2">
             Click the Download Cover Letter button to save the cover letter as a text file.

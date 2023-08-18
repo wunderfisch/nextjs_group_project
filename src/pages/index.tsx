@@ -67,7 +67,7 @@ export default function Home() {
             </h2>
             <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
               are important to get a job because they demonstrate an
-              individual's ability to communicate effectively, work well with
+              individuals ability to communicate effectively, work well with
               others, and adapt to different situations. Employers often seek
               candidates with strong soft skills as they contribute to a
               positive work culture, increased productivity, and better
