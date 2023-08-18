@@ -15,33 +15,53 @@ const TextChat = () => {
   const [message, setMessage] = useState("");
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [buttonColor, setButtonColor] = useState("bg-blue-500");
-  const [isFirstRender, setIsFirstRender] = useState(true); //
-  const isScrolledRef = useRef(false); // New
-  const [isApiKeyAvailable, setIsApiKeyAvailable] = useState(true); //change the state to false when you dont wanna use openaiapi or to true to switch it on
+  const [isFirstRender, setIsFirstRender] = useState(true);
+  const isScrolledRef = useRef(false);
+  const [isApiKeyAvailable, setIsApiKeyAvailable] = useState(true);
   const [userSentFirstMessage, setUserSentFirstMessage] = useState(false);
-
+  const [isMessageRelated, setIsMessageRelated] = useState(true); 
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const toggleChat = () => {
     setIsOpen((prev) => !prev);
     setMessage("");
     setChatMessages([]);
-    setUserSentFirstMessage(false); // Reset the flag so the initial message is shown again
+    setUserSentFirstMessage(false);
+    setIsMessageRelated(true); // Reset the state when chat is opened
   };
+
+  const allowedTopics = [
+    "tech",
+    "technical",
+    "react",
+    "css",
+    "html",
+    "javascript",
+    "soft skills",
+    "jobs",
+    "interview",
+  ];
 
   const onSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
 
+    const hasAllowedTopic = allowedTopics.some(topic => message.toLowerCase().includes(topic));
+
+    if (!hasAllowedTopic) {
+      setIsMessageRelated(false); // Set the state to indicate the message is not related
+      return;
+    }
+
     const newMessage: ChatMessage = {
       id: Date.now(),
       text: message,
-      isUser: true, // This message is from the user
+      isUser: true,
     };
     setChatMessages((prevMessages) => [...prevMessages, newMessage]);
-    setMessage(""); // Clear the input field after sending the message
+    setMessage("");
 
     if (!userSentFirstMessage) {
-      setUserSentFirstMessage(true); // Update the state to indicate that the user sent the first message
+      setUserSentFirstMessage(true);
     }
 
     if (isApiKeyAvailable) {
@@ -59,19 +79,18 @@ const TextChat = () => {
           },
         });
         const responseData = await res.json();
-        // Handle server response here
         if (responseData?.text) {
           const newSupportMessage: ChatMessage = {
             id: Date.now(),
             text: responseData.text,
-            isUser: false, // This message is from the support (not the user)
+            isUser: false,
           };
           setChatMessages((prevMessages) => [
             ...prevMessages,
             newSupportMessage,
           ]);
         }
-        setMessage(""); // Clear the input field after sending the message
+        setMessage("");
       } catch (error) {
         console.log(error);
       }
@@ -80,7 +99,6 @@ const TextChat = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Generate a random color for the button
       const colors = [
         "bg-red-500",
         "bg-green-500",
@@ -96,27 +114,22 @@ const TextChat = () => {
   }, []);
 
   useEffect(() => {
-    // Check if it's the first render
     if (isFirstRender) {
-      // Set a timeout to mark isFirstRender as false after the falling animation duration
       const timeoutId = setTimeout(() => {
         setIsFirstRender(false);
       }, 2000);
-
-      // Clear the timeout when the component is unmounted or updated
       return () => clearTimeout(timeoutId);
     }
   }, [isFirstRender]);
 
   useEffect(() => {
     if (isScrolledRef.current) {
-      // Scroll to the bottom of the chat container after new messages are added
       chatContainerRef.current?.scrollTo({
         top: chatContainerRef.current?.scrollHeight,
         behavior: "smooth",
       });
     } else {
-      isScrolledRef.current = true; // Mark that scrolling has been performed after the initial render
+      isScrolledRef.current = true;
     }
   }, [chatMessages]);
 
@@ -128,9 +141,9 @@ const TextChat = () => {
           whileHover={{ scale: 1.3 }}
           whileTap={{ scale: 0.7 }}
           onClick={toggleChat}
-          initial={isFirstRender ? { y: -1000 } : { y: 0 }} // Initial position off-screen on the first render, otherwise on the screen
-          animate={{ y: 0 }} // Final position at y = 0 (on the screen)
-          transition={{ type: "spring", stiffness: 300, damping: 20 }} // Spring animation
+          initial={isFirstRender ? { y: -1000 } : { y: 0 }}
+          animate={{ y: 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <Image
             src={dancingRobot}
@@ -152,31 +165,37 @@ const TextChat = () => {
             </button>
           </div>
           <div ref={chatContainerRef} className="h-48 overflow-y-auto mb-4">
-            <AnimatePresence>
-              <div className="">
-                {chatMessages.map((msg) => (
-                  <motion.div
-                    key={msg.id}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className={`p-2 my-2 rounded-lg  ${
-                      msg.isUser
-                        ? "bg-blue-200 text-blue-800"
-                        : "bg-blue-200 text-gray-700"
-                    }  whitespace-pre-wrap block  break-words`}
-                    style={{
-                      boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
-                      marginBottom: "8px", //margin to create separation between messages
-                    }}
-                  >
-                    {msg.text}
-                  </motion.div>
-                ))}
-              </div>
-            </AnimatePresence>
+          <AnimatePresence>
+    <div className="">
+      {chatMessages.map((msg) => (
+        <motion.div
+          key={msg.id}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className={`p-2 my-2 rounded-lg  ${
+            msg.isUser
+              ? "bg-blue-200 text-blue-800"
+              : "bg-blue-200 text-gray-700"
+          }  whitespace-pre-wrap block  break-words`}
+          style={{
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
+            marginBottom: "8px",
+          }}
+        >
+          {msg.text}
+        </motion.div>
+      ))}
 
-            {userSentFirstMessage && ( // Hide the phrase and image after the first message
+      {!isMessageRelated && (
+        <div className="p-2 my-2 rounded-lg bg-red-100 text-red-500">
+          Please enter a message related to the allowed topics.
+        </div>
+      )}
+    </div>
+  </AnimatePresence>
+
+            {userSentFirstMessage && (
               <></>
             )}
             {!userSentFirstMessage && (

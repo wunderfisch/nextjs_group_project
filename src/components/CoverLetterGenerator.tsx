@@ -53,6 +53,12 @@ const CoverLetterGenerator = () => {
     setGeneratedLetter("");
   };
 
+  // Check if the input contains certain keywords related to cover letters
+  const isCoverLetterRelated = (text: string) => {
+    const coverLetterKeywords = ["cover letter", "cover leter", "job application", "resume"];
+    return coverLetterKeywords.some(keyword => text.toLowerCase().includes(keyword));
+  };
+
   return (
     <div className="flex flex-col items-center min-h-screen bg-white-100 py-8">
       {!showGeneratedLetter ? (
@@ -65,12 +71,15 @@ const CoverLetterGenerator = () => {
             className="border p-2 mb-4 w-full rounded-md resize-none text-gray-800"
             rows={6}
           />
+          {input && !isCoverLetterRelated(input) && (
+            <p className="text-red-500 mb-2">Enter questions related to cover letters and I will generate them for you</p>
+          )}
           <button
             onClick={generateCoverLetter}
             className={`bg-rose-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-rose-400 transition duration-300 ${
-              isLoading ? "opacity-50 cursor-not-allowed" : ""
+              isLoading || !isCoverLetterRelated(input) ? "opacity-50 cursor-not-allowed" : ""
             }`}
-            disabled={isLoading}
+            disabled={isLoading || !isCoverLetterRelated(input)}
           >
             {isLoading ? "Generating..." : "Generate Cover Letter"}
           </button>
