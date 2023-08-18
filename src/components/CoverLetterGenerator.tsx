@@ -32,11 +32,17 @@ const CoverLetterGenerator = () => {
 
   const downloadCoverLetter = () => {
     const blob = new Blob([generatedLetter], { type: "text/plain" });
+    //creating a new Blob instance
+    //blob-binary large object-handle content as a plein text
     const url = URL.createObjectURL(blob);
+    //creating temporary a URL that represents the content
     const link = document.createElement("a");
+    //creating a link element that can trigger the download process when clicked
     link.href = url;
+    //setting the href attribute of the anchor element
     link.download = "cover_letter.txt";
     link.click();
+    //triggering click event
   };
 
   return (
