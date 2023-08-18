@@ -30,8 +30,8 @@ const Footer = () => {
     };
   }, []);
 
-  const email = "contact@yourdomain.com";
-  const phoneNumber = "+1 (123) 456-7890";
+  const email = "contact@purplephoenixes.com";
+  const phoneNumber = "+17777777777777";
 
   return (
     <div className="bg-gray-800 text-white py-8">
@@ -47,7 +47,6 @@ const Footer = () => {
           </p>
 
           <div className="flex justify-center space-x-4 py-4">
-            {/* Social Media Icons */}
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
               <FaFacebook size={30} color="#ffffff" />
             </a>
@@ -58,14 +57,10 @@ const Footer = () => {
               <FaInstagram size={30} color="#ffffff" />
             </a>
           </div>
-
-          {/* Subscription Section */}
           <div className="flex justify-center py-4">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita sequi deserunt eos placeat,
           </div>
         </div>
-
-        {/* Contact Information */}
         <div className="flex justify-center py-4">
           <p className="text-white">
             <FaEnvelope className="inline mr-2" />
